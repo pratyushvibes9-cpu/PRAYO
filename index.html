@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prayo Ride – Premium taxi service in Maharashtra. Fast, safe, smart rides.">
+  <title>Prayo Ride – Premium Taxi Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== GENERAL STYLES ===== */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f1f5f9;color:#111;scroll-behavior:smooth;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    h1,h2,h3,h4,h5,h6{font-weight:600;color:#111;}
+    p{color:#333;}
+
+    /* ===== NAVBAR ===== */
+    header{width:100%;background:#0f172a;color:white;position:fixed;top:0;left:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+    .nav-container{max-width:1200px;margin:auto;padding:1rem;display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:1.8rem;font-weight:700;color:#facc15;}
+    nav a{margin-left:1.5rem;font-weight:500;color:white;transition:0.3s;}
+    nav a:hover{color:#facc15;}
+    .btn-book{background:#facc15;color:#0f172a;padding:0.6rem 1.3rem;border-radius:50px;font-weight:600;margin-left:1rem;transition:0.3s;}
+    .btn-book:hover{background:#eab308;}
+
+    /* ===== HERO SECTION ===== */
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 1rem;background:linear-gradient(to right,#0f172a,#1e293b);color:white;}
+    .hero h1{font-size:2.8rem;margin-bottom:1rem;}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;}
+    .hero .btn{background:#facc15;color:#0f172a;padding:0.8rem 1.8rem;border-radius:50px;font-weight:600;margin-right:1rem;transition:0.3s;}
+    .hero .btn:hover{background:#eab308;}
+
+    /* ===== RIDE BOOKING FORM ===== */
+    .booking-section{max-width:1000px;margin:4rem auto;padding:2rem;background:white;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+    .booking-section h2{text-align:center;margin-bottom:2rem;color:#0f172a;}
+    .booking-form{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+    .booking-form input, .booking-form select{padding:0.8rem 1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;}
+    .booking-form button{grid-column:span 2;background:#0f172a;color:white;padding:0.8rem 1.5rem;font-weight:600;border:none;border-radius:50px;cursor:pointer;transition:0.3s;}
+    .booking-form button:hover{background:#1e40af;color:#facc15;}
+    @media(max-width:768px){.booking-form{grid-template-columns:1fr;}}
+
+    /* ===== FEATURES ===== */
+    .features{padding:4rem 1rem;background:#f1f5f9;}
+    .features h2{text-align:center;margin-bottom:3rem;color:#0f172a;}
+    .feature-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:1200px;margin:auto;}
+    .feature-card{background:white;padding:2rem;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center;}
+    .feature-card h3{margin-bottom:1rem;color:#0f172a;}
+    .feature-card p{color:#555;}
+
+    /* ===== CONTACT ===== */
+    .contact-section{padding:4rem 1rem;background:#0f172a;color:white;}
+    .contact-section h2{text-align:center;margin-bottom:2rem;color:#facc15;}
+    .contact-form{max-width:600px;margin:auto;display:grid;gap:1rem;}
+    .contact-form input, .contact-form textarea{padding:0.8rem 1rem;border-radius:8px;border:none;font-size:1rem;}
+    .contact-form button{background:#facc15;color:#0f172a;padding:0.8rem 1.5rem;font-weight:600;border:none;border-radius:50px;cursor:pointer;transition:0.3s;}
+    .contact-form button:hover{background:#eab308;}
+
+    /* ===== FOOTER ===== */
+    footer{padding:2rem;text-align:center;background:#020617;color:#f1f5f9;}
+    footer a{color:#facc15;text-decoration:none;}
+    footer p{margin-top:0.5rem;color:#9ca3af;}
+
+    /* ===== MAP ===== */
+    .map-container{margin:3rem auto;max-width:1000px;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+    iframe{width:100%;height:400px;border:0;}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">PRAYO</div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#booking">Book Ride</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+        <a href="#map" class="btn-book">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Prayo Ride – Fast & Safe Cabs</h1>
+      <p>Premium taxi booking service in Maharashtra. Instant rides, transparent pricing, 24/7 support.</p>
+      <a href="#booking" class="btn">Book Your Ride</a>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking-section" id="booking">
+    <h2>Book Your Ride</h2>
+    <form class="booking-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Pickup Location" required>
+      <input type="text" placeholder="Drop Location" required>
+      <select required>
+        <option value="">Select Car Type</option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Mini">Mini</option>
+      </select>
+      <button type="submit">Book Ride</button>
+    </form>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Why Choose Prayo Ride?</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <h3>Fast Booking</h3>
+        <p>Book your ride in seconds. Our smart system ensures instant driver matching.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Safe & Trusted</h3>
+        <p>Professional drivers with verified identities and live tracking for your safety.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Transparent Pricing</h3>
+        <p>No hidden charges. Know your fare before you ride.</p>
+      </div>
+      <div class="feature-card">
+        <h3>24/7 Support</h3>
+        <p>We are always ready to help via chat or email: pratyushvibes9@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-container" id="map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6051054.856252892!2d72.77135312910557!3d19.29998204502406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63b45ee04a1%3A0xd1d05d2c48d8ec9c!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+      allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Prayo Ride. Designed by Pratyush Singh. Email: <a href="mailto:pratyushvibes9@gmail.com">pratyushvibes9@gmail.com</a></p>
+    <p>All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prayo Ride – Premium taxi service in Maharashtra. Fast, safe, smart rides.">
+  <title>Prayo Ride – Premium Taxi Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== GENERAL STYLES ===== */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f1f5f9;color:#111;scroll-behavior:smooth;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    h1,h2,h3,h4,h5,h6{font-weight:600;color:#111;}
+    p{color:#333;}
+
+    /* ===== NAVBAR ===== */
+    header{width:100%;background:#0f172a;color:white;position:fixed;top:0;left:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+    .nav-container{max-width:1200px;margin:auto;padding:1rem;display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:1.8rem;font-weight:700;color:#facc15;}
+    nav a{margin-left:1.5rem;font-weight:500;color:white;transition:0.3s;}
+    nav a:hover{color:#facc15;}
+    .btn-book{background:#facc15;color:#0f172a;padding:0.6rem 1.3rem;border-radius:50px;font-weight:600;margin-left:1rem;transition:0.3s;}
+    .btn-book:hover{background:#eab308;}
+
+    /* ===== HERO SECTION ===== */
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 1rem;background:linear-gradient(to right,#0f172a,#1e293b);color:white;}
+    .hero h1{font-size:2.8rem;margin-bottom:1rem;}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;}
+    .hero .btn{background:#facc15;color:#0f172a;padding:0.8rem 1.8rem;border-radius:50px;font-weight:600;margin-right:1rem;transition:0.3s;}
+    .hero .btn:hover{background:#eab308;}
+
+    /* ===== RIDE BOOKING FORM ===== */
+    .booking-section{max-width:1000px;margin:4rem auto;padding:2rem;background:white;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+    .booking-section h2{text-align:center;margin-bottom:2rem;color:#0f172a;}
+    .booking-form{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+    .booking-form input, .booking-form select{padding:0.8rem 1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;}
+    .booking-form button{grid-column:span 2;background:#0f172a;color:white;padding:0.8rem 1.5rem;font-weight:600;border:none;border-radius:50px;cursor:pointer;transition:0.3s;}
+    .booking-form button:hover{background:#1e40af;color:#facc15;}
+    @media(max-width:768px){.booking-form{grid-template-columns:1fr;}}
+
+    /* ===== FEATURES ===== */
+    .features{padding:4rem 1rem;background:#f1f5f9;}
+    .features h2{text-align:center;margin-bottom:3rem;color:#0f172a;}
+    .feature-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:1200px;margin:auto;}
+    .feature-card{background:white;padding:2rem;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center;}
+    .feature-card h3{margin-bottom:1rem;color:#0f172a;}
+    .feature-card p{color:#555;}
+
+    /* ===== CONTACT ===== */
+    .contact-section{padding:4rem 1rem;background:#0f172a;color:white;}
+    .contact-section h2{text-align:center;margin-bottom:2rem;color:#facc15;}
+    .contact-form{max-width:600px;margin:auto;display:grid;gap:1rem;}
+    .contact-form input, .contact-form textarea{padding:0.8rem 1rem;border-radius:8px;border:none;font-size:1rem;}
+    .contact-form button{background:#facc15;color:#0f172a;padding:0.8rem 1.5rem;font-weight:600;border:none;border-radius:50px;cursor:pointer;transition:0.3s;}
+    .contact-form button:hover{background:#eab308;}
+
+    /* ===== FOOTER ===== */
+    footer{padding:2rem;text-align:center;background:#020617;color:#f1f5f9;}
+    footer a{color:#facc15;text-decoration:none;}
+    footer p{margin-top:0.5rem;color:#9ca3af;}
+
+    /* ===== MAP ===== */
+    .map-container{margin:3rem auto;max-width:1000px;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+    iframe{width:100%;height:400px;border:0;}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">PRAYO</div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#booking">Book Ride</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+        <a href="#map" class="btn-book">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Prayo Ride – Fast & Safe Cabs</h1>
+      <p>Premium taxi booking service in Maharashtra. Instant rides, transparent pricing, 24/7 support.</p>
+      <a href="#booking" class="btn">Book Your Ride</a>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking-section" id="booking">
+    <h2>Book Your Ride</h2>
+    <form class="booking-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Pickup Location" required>
+      <input type="text" placeholder="Drop Location" required>
+      <select required>
+        <option value="">Select Car Type</option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Mini">Mini</option>
+      </select>
+      <button type="submit">Book Ride</button>
+    </form>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Why Choose Prayo Ride?</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <h3>Fast Booking</h3>
+        <p>Book your ride in seconds. Our smart system ensures instant driver matching.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Safe & Trusted</h3>
+        <p>Professional drivers with verified identities and live tracking for your safety.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Transparent Pricing</h3>
+        <p>No hidden charges. Know your fare before you ride.</p>
+      </div>
+      <div class="feature-card">
+        <h3>24/7 Support</h3>
+        <p>We are always ready to help via chat or email: pratyushvibes9@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-container" id="map">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6051054.856252892!2d72.77135312910557!3d19.29998204502406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63b45ee04a1%3A0xd1d05d2c48d8ec9c!2sMaharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+      allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Prayo Ride. Designed by Pratyush Singh. Email: <a href="mailto:pratyushvibes9@gmail.com">pratyushvibes9@gmail.com</a></p>
+    <p>All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
